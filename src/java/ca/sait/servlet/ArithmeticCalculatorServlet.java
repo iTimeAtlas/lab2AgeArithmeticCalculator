@@ -52,12 +52,13 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         String holderVar2 = request.getParameter("reqNum2");
         String holderOperation = request.getParameter("operation");
         
+        Double result;
         
         try {
             double firstNum = Double.parseDouble(holderVar1);
             double secondNum = Double.parseDouble(holderVar2);
 
-            Double result;
+            
 
             switch (holderOperation) {
 
@@ -89,6 +90,7 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             // END OF SWITCH CASE
             }
         } catch (Exception ex) {
+            result = Double.NaN;
             message = "invalid";
         
         }
